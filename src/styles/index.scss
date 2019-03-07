@@ -1,0 +1,30 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  padding: 1em;
+  background: #fff;
+
+  > * + * {
+    margin-top: 0.5em
+  }
+
+  input {
+    padding: 1px;
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    width: 20px;
+    text-align: center;
+    margin-right: .3em;
+  }
+}
