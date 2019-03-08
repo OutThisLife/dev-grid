@@ -1,5 +1,3 @@
-import '../css/index.scss'
-
 const ext = global.chrome
 
 ext.tabs.query({ active: true }, ([t]) => {
