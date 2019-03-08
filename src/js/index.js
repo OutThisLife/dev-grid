@@ -1,9 +1,12 @@
-import { ext, storage } from './utils'
+import '../css/index.scss'
+
+const ext = global.chrome
 
 ext.tabs.query({ active: true }, ([t]) => {
-  const bkg = ext.extension.getBackgroundPage()
-  const $app = document.getElementById("app")
+  const $app = document.getElementById('app')
   const $fields = [].slice.call($app.querySelectorAll('input'))
+
+  console.log(t)
 
   const update = () => {
     const payload = $fields.reduce((acc, f) => {
@@ -18,21 +21,21 @@ ext.tabs.query({ active: true }, ([t]) => {
     }, {})
 
     try {
-      storage.set(payload, () =>
+      ext.storage.sync.set(payload, () =>
         ext.tabs.sendMessage(t.id, { payload })
       )
     } catch (err) {
-      bkg.console.error(err)
+      console.error(err)
     }
   }
 
   try {
-    storage.get(null, res => {
+    ext.storage.sync.get(null, res => {
       $fields.forEach(f => f.name in res && (f.value = res[f.name]))
       update()
     })
   } catch (err) {
-    bkg.console.error(err)
+    console.error(err)
   }
 
   window.requestAnimationFrame(update)
@@ -48,6 +51,5 @@ ext.tabs.query({ active: true }, ([t]) => {
 
       update()
     }
-
   })
-});
+})

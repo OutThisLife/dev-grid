@@ -1,40 +1,33 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link href="styles/index.css" rel="stylesheet" />
-  </head>
-  <body>
-    <form id="app" method="POST" action="javascript:;">
-      <div>
-        <label>40</label>
+<link rel=“manifest” href="./manifest.json" />
 
-        <input
-          type="range"
-          name="cols"
-          value="40"
-          min="0"
-          max="60"
-          step="1"
-        />
-      </div>
+<form id="app" method="POST" action="javascript:;">
+  <div>
+    <label>40</label>
 
-      <div>
-        <label>0.5</label>
+    <input
+      type="range"
+      name="cols"
+      value="40"
+      min="0"
+      max="60"
+      step="1"
+    />
+  </div>
 
-        <input
-          type="range"
-          name="opacity"
-          value="0.5"
-          min="0"
-          max="1"
-          step="0.1"
-        />
-      </div>
+  <div>
+    <label>0.5</label>
 
-      <input type="hidden" name="colour" value="cyan" />
-    </form>
+    <input
+      type="range"
+      name="opacity"
+      value="0.5"
+      min="0"
+      max="1"
+      step="0.1"
+    />
+  </div>
 
-    <script src="scripts/index.js"></script>
-  </body>
-</html>
+  <input type="hidden" name="colour" value="cyan" />
+</form>
+
+<script src="js/index.js"></script>
