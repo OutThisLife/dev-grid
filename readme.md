@@ -1,3 +1,5 @@
-1. `git clone`
-2. chrome://extensions
-3. load unpacked, click button
+# Install instructions
+
+1. `git clone https://github.com/OutThisLife/dev-grid && cd dev-grid && yarn`
+2. In chrome, open up `chrome://extensions`
+3. Click on 'load unpacked' and load the `dist/` folder.
